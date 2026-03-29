@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Store {
+  id        String   @id @default(uuid())
+  name      String
+  createdAt DateTime @default(now()) @map("created_at")
+  users     User[]
+  events    Event[]
+
+  @@map("stores")
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  storeId      String   @map("store_id")
+  store        Store    @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@map("users")
+}
+
+enum EventType {
+  PAGE_VIEW
+  ADD_TO_CART
+  CHECKOUT_STARTED
+  PURCHASE
+  PRODUCT_VIEW
+}
+
+model Event {
+  id         String    @id @default(uuid())
+  eventId    String    @unique @map("event_id")
+  storeId    String    @map("store_id")
+  store      Store     @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  eventType  EventType @map("event_type")
+  occurredAt DateTime  @map("occurred_at")
+  amount     Decimal?  @db.Decimal(12, 2)
+  currency   String?
+  productId  String?   @map("product_id")
+  sessionId  String?   @map("session_id")
+  payload    Json?
+
+  @@index([storeId, occurredAt(sort: Desc)])
+  @@index([storeId, eventType, occurredAt])
+  @@index([storeId, productId, occurredAt])
+  @@map("events")
+}
