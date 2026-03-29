@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --d-bg: #f5f5f4;
+  --d-surface: #ffffff;
+  --d-surface-mint: #ecfdf5;
+  --d-surface-dim: rgba(255,255,255,0.6);
+  --d-surface-dark: #1a1a1a;
+  --d-border: rgba(0,0,0,0.06);
+  --d-border-input: rgba(0,0,0,0.1);
+  --d-text: #111111;
+  --d-text-mid: #666666;
+  --d-text-dim: #999999;
+  --d-text-faint: #bbbbbb;
+  --d-text-ghost: #cccccc;
+  --d-text-mint: #065f46;
+  --d-text-mint-dim: rgba(6,95,70,0.5);
+  --d-text-mint-legend: rgba(6,95,70,0.7);
+  --d-skel: #f3f4f6;
+  --d-grid: #f0f0f0;
+  --d-bar-track: #f3f4f6;
+  --d-timeline-line: #f3f4f6;
+  --d-timeline-dot-border: #ffffff;
+  --d-timeline-dot: #d1d5db;
+  --d-badge-live: rgba(255,255,255,0.1);
+  --d-hero-bg: #1B5E3F;
+  --d-nav-bg: #ffffff;
+  --d-pop-bg: #ffffff;
+  --d-pop-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  --d-tt-bg: #ffffff;
+  --d-tt-border: #e5e7eb;
+  --d-tt-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  --d-filter-active-border: rgba(46,204,113,0.3);
+  --d-filter-active-bg: #ecfdf5;
+  --d-filter-active-text: #065f46;
+  --d-error-bg: #fef2f2;
+  --d-error-border: #fecaca;
+  --d-error-text: #dc2626;
+  --d-badge-page: #f3f4f6;
+  --d-badge-page-text: #4b5563;
+  --d-badge-product: #ecfdf5;
+  --d-badge-product-text: #065f46;
+  --d-badge-cart: #fffbeb;
+  --d-badge-cart-text: #b45309;
+  --d-badge-checkout: #f5f3ff;
+  --d-badge-checkout-text: #6d28d9;
+  --d-badge-purchase: #d1fae5;
+  --d-badge-purchase-text: #065f46;
+  --d-live-bg: #111111;
+  --d-live-dot-off: rgba(255,255,255,0.2);
+  --d-live-label: rgba(255,255,255,0.4);
+  --d-prod-bar: rgba(46,204,113,0.2);
+  --d-prod-rank: rgba(255,255,255,0.2);
+  --d-prod-row: rgba(255,255,255,0.06);
+  --d-pill-bg: #f3f4f6;
+  --d-pill-text: #999999;
+  --d-glass: rgba(245,245,244,0.72);
+  --d-glass-border: rgba(0,0,0,0.05);
+}
+
+.dark {
+  --d-bg: #0a0a0a;
+  --d-surface: #141414;
+  --d-surface-mint: #0c1f16;
+  --d-surface-dim: rgba(255,255,255,0.03);
+  --d-surface-dark: #0e0e0e;
+  --d-border: rgba(255,255,255,0.07);
+  --d-border-input: rgba(255,255,255,0.12);
+  --d-text: #e5e5e5;
+  --d-text-mid: #999999;
+  --d-text-dim: #666666;
+  --d-text-faint: #444444;
+  --d-text-ghost: #333333;
+  --d-text-mint: #6ee7b7;
+  --d-text-mint-dim: rgba(110,231,183,0.4);
+  --d-text-mint-legend: rgba(110,231,183,0.6);
+  --d-skel: #1c1c1c;
+  --d-grid: #1e1e1e;
+  --d-bar-track: #222222;
+  --d-timeline-line: #1e1e1e;
+  --d-timeline-dot-border: #141414;
+  --d-timeline-dot: #444444;
+  --d-badge-live: rgba(255,255,255,0.06);
+  --d-hero-bg: #0f3525;
+  --d-nav-bg: #111111;
+  --d-pop-bg: #1a1a1a;
+  --d-pop-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  --d-tt-bg: #1a1a1a;
+  --d-tt-border: #2a2a2a;
+  --d-tt-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  --d-filter-active-border: rgba(46,204,113,0.25);
+  --d-filter-active-bg: #0c1f16;
+  --d-filter-active-text: #6ee7b7;
+  --d-error-bg: #1c0a0a;
+  --d-error-border: #7f1d1d;
+  --d-error-text: #fca5a5;
+  --d-badge-page: #1e1e1e;
+  --d-badge-page-text: #999999;
+  --d-badge-product: #0c1f16;
+  --d-badge-product-text: #6ee7b7;
+  --d-badge-cart: #1a1508;
+  --d-badge-cart-text: #fbbf24;
+  --d-badge-checkout: #150e28;
+  --d-badge-checkout-text: #c4b5fd;
+  --d-badge-purchase: #0c1f16;
+  --d-badge-purchase-text: #34d399;
+  --d-live-bg: #050505;
+  --d-live-dot-off: rgba(255,255,255,0.12);
+  --d-live-label: rgba(255,255,255,0.3);
+  --d-prod-bar: rgba(46,204,113,0.12);
+  --d-prod-rank: rgba(255,255,255,0.1);
+  --d-prod-row: rgba(255,255,255,0.04);
+  --d-pill-bg: #1e1e1e;
+  --d-pill-text: #666666;
+  --d-glass: rgba(10,10,10,0.72);
+  --d-glass-border: rgba(255,255,255,0.06);
+}
+
+body {
+  font-family: var(--font-inter), "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: var(--d-text);
+  background: var(--d-bg);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes hint-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+}
+.scroll-hint {
+  animation: hint-bounce 2s ease-in-out infinite;
+}
+.scroll-hint-hide {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px) !important;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.scroll-hint-show {
+  opacity: 1;
+  transition: opacity 0.4s ease, transform 0.05s;
+}
