@@ -1,10 +1,12 @@
-import { ValidationPipe } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
+  const logger = new Logger('Bootstrap');
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api/v1');
+  app.enableShutdownHooks();
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
@@ -27,6 +29,7 @@ async function bootstrap() {
   });
   const port = Number(process.env.PORT ?? 3001);
   await app.listen(port);
+  logger.log(`Amsiro API listening on port ${port}`);
 }
 
 void bootstrap();
